@@ -1,0 +1,18 @@
+include: package:flutter_lints/flutter.yaml
+analyzer:
+
+  exclude: [ build/**, lib/**.g.dart, lib/**.gen.dart, lib/**.config.dart ]
+
+linter:
+  rules:
+    - always_declare_return_types
+    - cancel_subscriptions
+    - prefer_single_quotes
+    - avoid_returning_null
+    - avoid_type_to_string
+    - avoid_types_as_parameter_names
+    - avoid_web_libraries_in_flutter
+    - no_logic_in_create_state
+    - no_duplicate_case_values
+    - avoid_slow_async_io
+    - prefer_void_to_null
