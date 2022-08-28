@@ -1,5 +1,7 @@
 abstract class Configuration {
-  static int get receiveTimeout => 10;
+  static const int  receiveTimeout = 10;
+  static const int connectTimeout = 10;
 
-  static int get connectTimeout => 10;
+  static const bool logResponseBody = false;
+  static const bool logRequestHeader = false;
 }

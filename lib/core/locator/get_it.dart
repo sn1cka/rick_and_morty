@@ -16,7 +16,9 @@ void configureDependencies(String environment) {
           // receiveTimeout: Configuration.receiveTimeout,
           ),
     )..interceptors.add(
-        LogInterceptor(responseBody: true),
+        LogInterceptor(
+            responseBody: Configuration.logResponseBody,
+            requestHeader: Configuration.logRequestHeader),
       ),
   );
   $initGetIt(getIt, environment: environment);

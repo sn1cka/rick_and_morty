@@ -37,10 +37,8 @@ class AppRouter extends _i5.RootStackRouter {
           child: _i2.CharacterPage(key: args.key, character: args.character));
     },
     CharactersRoute.name: (routeData) {
-      final args = routeData.argsAs<CharactersRouteArgs>(
-          orElse: () => const CharactersRouteArgs());
       return _i5.CupertinoPageX<dynamic>(
-          routeData: routeData, child: _i3.CharactersPage(key: args.key));
+          routeData: routeData, child: const _i3.CharactersPage());
     },
     EpisodesRoute.name: (routeData) {
       return _i5.CupertinoPageX<dynamic>(
@@ -95,23 +93,11 @@ class CharacterRouteArgs {
 
 /// generated route for
 /// [_i3.CharactersPage]
-class CharactersRoute extends _i5.PageRouteInfo<CharactersRouteArgs> {
-  CharactersRoute({_i6.Key? key})
-      : super(CharactersRoute.name,
-            path: 'characters-page', args: CharactersRouteArgs(key: key));
+class CharactersRoute extends _i5.PageRouteInfo<void> {
+  const CharactersRoute()
+      : super(CharactersRoute.name, path: 'characters-page');
 
   static const String name = 'CharactersRoute';
-}
-
-class CharactersRouteArgs {
-  const CharactersRouteArgs({this.key});
-
-  final _i6.Key? key;
-
-  @override
-  String toString() {
-    return 'CharactersRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

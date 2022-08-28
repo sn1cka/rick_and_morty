@@ -12,12 +12,14 @@ class CharactersCubit extends Cubit<CharactersState> {
 
   final Repository _repository;
 
-  void getCharacters() async {
-    emit(CharactersLoading());
-    await _repository.getCharacters().then(
-          (value) => emit(
-            CharactersUpdated(value.endReached, value.results),
-          ),
-        );
+  void updateCharactersList() async {
+    if (state is! CharactersLoading) {
+      emit(CharactersLoading());
+      await _repository.getCharacters().then(
+            (value) => emit(
+              CharactersUpdated(value.endReached, value.results),
+            ),
+          );
+    }
   }
 }

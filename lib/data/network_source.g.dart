@@ -18,9 +18,10 @@ class _NetworkSource implements NetworkSource {
   String? baseUrl;
 
   @override
-  Future<ResponseModel<CharacterModel>> getCharacters() async {
+  Future<ResponseModel<CharacterModel>> getCharacters({page}) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
@@ -37,9 +38,10 @@ class _NetworkSource implements NetworkSource {
   }
 
   @override
-  Future<ResponseModel<EpisodeModel>> getEpisodes() async {
+  Future<ResponseModel<EpisodeModel>> getEpisodes({page}) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'page': page};
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(

@@ -8,14 +8,14 @@ class DashBoardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      appBarBuilder: (context, tabsRouter) => AppBar(),
       homeIndex: 0,
-      routes: [
+      routes: const [
         CharactersRoute(),
         EpisodesRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return BottomNavigationBar(
+          enableFeedback: true,
           onTap: (index) => tabsRouter.setActiveIndex(index),
           currentIndex: tabsRouter.activeIndex,
           items: const [

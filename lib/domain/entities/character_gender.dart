@@ -3,4 +3,9 @@ enum CharacterGender {
   male,
   genderless,
   unknown,
+
+
+  CharacterGender getFromString(String s){
+
+}
 }

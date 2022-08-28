@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:rick_and_morty/data/models/character.dart';
 import 'package:rick_and_morty/data/models/episode.dart';
-import 'package:rick_and_morty/data/models/info.dart';
 import 'package:rick_and_morty/data/models/response_model.dart';
 
 part 'network_source.g.dart';
@@ -15,8 +14,12 @@ abstract class NetworkSource {
   factory NetworkSource(Dio dio) = _NetworkSource;
 
   @GET('/character')
-  Future<ResponseModel<CharacterModel>> getCharacters();
+  Future<ResponseModel<CharacterModel>> getCharacters({
+    @Query('page') int? page,
+  });
 
   @GET('/episode')
-  Future<ResponseModel<EpisodeModel>> getEpisodes();
+  Future<ResponseModel<EpisodeModel>> getEpisodes({
+    @Query('page') int? page,
+  });
 }

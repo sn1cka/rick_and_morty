@@ -15,8 +15,12 @@ class CharactersLoading extends CharactersState {
 }
 
 class CharactersException extends CharactersState {
+  const CharactersException(this.exception);
+
+  final Exception exception;
+
   @override
-  List<Object> get props => [];
+  List<Object> get props => [exception];
 }
 
 class CharactersUpdated extends CharactersState {
